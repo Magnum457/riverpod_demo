@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+
+import 'pages/notes_page.dart';
 import 'theme/custom_theme.dart';
 
 class App extends StatefulWidget {
@@ -36,7 +38,7 @@ class _AppState extends State<App> {
           backgroundColor: CustomTheme.black,
         ),
       ),
-      home: SizedBox(),
+      home: const NotesPage(),
     );
   }
 }
