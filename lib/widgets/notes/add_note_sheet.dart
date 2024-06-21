@@ -127,7 +127,6 @@ class _AddTaskSheetState extends ConsumerState<AddNoteSheet> {
                                 Colors.deepPurple,
                                 Colors.deepOrange,
                                 Colors.pink,
-                                Colors.brown,
                               ]
                                   .map(
                                     (MaterialColor color) =>

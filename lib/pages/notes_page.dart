@@ -8,6 +8,7 @@ import '../widgets/notes/bottom_navigation_widget.dart';
 import '../providers/notes/notes_view_options.dart';
 import '../providers/notes/view_filtered_provider.dart';
 import '../providers/notes/view_toogle_provider.dart';
+import '../widgets/notes/notes_grid_view.dart';
 
 class NotesPage extends ConsumerWidget {
   const NotesPage({super.key});
@@ -29,6 +30,7 @@ class NotesPage extends ConsumerWidget {
       ),
       body: const Padding(
         padding: EdgeInsets.only(top: 36, left: 12, right: 12),
+        child: NotesGridView(),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.endDocked,
       floatingActionButton: CustomFloatingButton(
@@ -47,9 +49,9 @@ class NotesPage extends ConsumerWidget {
             onPressed: () => ref.read(notesViewModeProvider.notifier).toogle(),
           ),
           IconButton(
-            tooltip: viewModeValue.tooltip,
-            icon: viewModeValue.icon,
-            onPressed: () => ref.read(notesViewModeProvider.notifier).toogle(),
+            tooltip: viewFilteredValue.tooltip,
+            icon: viewFilteredValue.icon,
+            onPressed: () => ref.read(filterNotesProvider.notifier).toogle(),
           ),
         ],
       ),

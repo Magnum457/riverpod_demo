@@ -1,5 +1,7 @@
 import "package:flutter/material.dart";
+import "package:flutter_riverpod/flutter_riverpod.dart";
 
+import "../repositories/notes_repository.dart";
 import "../models/note.dart";
 
 class NoteDetailsPage extends StatelessWidget {
@@ -18,7 +20,31 @@ class NoteDetailsPage extends StatelessWidget {
         elevation: 0,
         foregroundColor: Colors.black87,
         backgroundColor: Colors.transparent,
-        actions: const [],
+        actions: [
+          Consumer(
+            builder: (context, ref, _) {
+              return !note.archived
+                  ? IconButton(
+                      onPressed: () {
+                        ref
+                            .read(notesRepositoryProvider.notifier)
+                            .archiveNote(note);
+                        Navigator.of(context).pop();
+                      },
+                      icon: const Icon(Icons.archive_rounded),
+                    )
+                  : IconButton(
+                      onPressed: () {
+                        ref
+                            .read(notesRepositoryProvider.notifier)
+                            .moveNoteToInbox(note);
+                        Navigator.of(context).pop();
+                      },
+                      icon: const Icon(Icons.undo),
+                    );
+            },
+          ),
+        ],
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),

@@ -40,7 +40,7 @@ class NoteCard extends StatelessWidget {
               ),
               Container(
                 constraints: const BoxConstraints(
-                  maxHeight: 150,
+                  maxHeight: 100,
                   maxWidth: 0,
                 ),
                 clipBehavior: Clip.none,

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-class ToogleButton<T> extends StatelessWidget {
+class ToogleBuilder<T> extends StatelessWidget {
   final ValueNotifier<T> toogle;
   final Widget Function(BuildContext context, T value) builder;
 
-  const ToogleButton({
+  const ToogleBuilder({
     super.key,
     required this.toogle,
     required this.builder,

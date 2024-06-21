@@ -30,7 +30,7 @@ class BottomNavigationWidget extends StatelessWidget {
             children: <Widget>[
               ...buttons.expand(
                 (button) => [
-                  const SizedBox(),
+                  const SizedBox(width: 12),
                   button,
                 ],
               ),

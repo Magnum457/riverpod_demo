@@ -28,14 +28,15 @@ class _AppState extends State<App> {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Riverpod Demo',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: CustomTheme.black,
-        scaffoldBackgroundColor: CustomTheme.black,
+        scaffoldBackgroundColor: Colors.white,
         elevatedButtonTheme: ElevatedButtonThemeData(
           style: CustomTheme.elevatedButtonStyle,
         ),
-        floatingActionButtonTheme: FloatingActionButtonThemeData(
-          backgroundColor: CustomTheme.black,
+        floatingActionButtonTheme: const FloatingActionButtonThemeData(
+          backgroundColor: Colors.white,
         ),
       ),
       home: const NotesPage(),
